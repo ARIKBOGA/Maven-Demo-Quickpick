@@ -141,4 +141,4 @@ Contributions are welcome! Feel free to fork this project, submit issues, or cre
 ---
 
 ## **License**
-This project is licensed under [Your Chosen License].
+This project is licensed under [ARIKBOGA](https://github.ARIKBOGA).
