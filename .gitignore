@@ -61,4 +61,5 @@ mvnw.cmd
 *.hprof
 *.pid
 *.seed
-*.jfr
+*.jfr.allure
+.allure
