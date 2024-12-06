@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.demo</groupId>
+  <artifactId>maven-demo-quickpick</artifactId>
+  <version>0.0.1</version>
+
+  <name>maven-demo-quickpick</name>
+  <url>http://www.example.com</url>
+  <description>A sample RestAssured API testing project</description>
+
+  <properties>
+      <maven.compiler.source>11</maven.compiler.source>
+      <maven.compiler.target>11</maven.compiler.target>
+      <surefire.version>3.0.0-M9</surefire.version>
+      <allure.version>2.10.0</allure.version> <!-- Updated to a compatible version -->
+  </properties>
+
+  <dependencies>
+      <dependency>
+          <groupId>io.rest-assured</groupId>
+          <artifactId>rest-assured</artifactId>
+          <version>5.5.0</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>5.10.2</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>5.10.2</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>org.hamcrest</groupId>
+          <artifactId>hamcrest</artifactId>
+          <version>2.2</version>
+          <scope>test</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-junit5</artifactId>
+          <version>${allure.version}</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>${surefire.version}</version>
+              <configuration>
+                  <includes>
+                      <include>**/*Test.java</include>
+                  </includes>
+                  <systemPropertyVariables>
+                      <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                  </systemPropertyVariables>
+              </configuration>
+          </plugin>
+
+          <plugin>
+              <groupId>io.qameta.allure</groupId>
+              <artifactId>allure-maven</artifactId>
+              <version>${allure.version}</version>
+          </plugin>
+      </plugins>
+  </build>
+</project>
