@@ -6,7 +6,7 @@
 
   <groupId>com.demo</groupId>
   <artifactId>maven-demo-quickpick</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
 
   <name>maven-demo-quickpick</name>
   <url>http://www.example.com</url>
