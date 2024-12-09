@@ -1,14 +1,14 @@
 package com.demo;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Step;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
+import io.restassured.response.Response;
 
 public class SampleTest {
 
