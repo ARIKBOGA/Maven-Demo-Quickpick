@@ -1,4 +1,4 @@
-package com.demo.RaghavTuturials.Hooks;
+package com.demo.MyStudies.Hooks;
 
 import static io.restassured.RestAssured.given;
 
@@ -26,10 +26,13 @@ Note that there are no methods in this class definition, only variables. The `gi
 public class Base {
     
     protected static final String baseURI = "https://reqres.in/api";
+    protected static final String getPath = "/users?page=2";
+    protected static final String postPath = "/users";
     protected static Response response;
 
-    protected RequestSpecification requestSpecification = given()
+    protected RequestSpecification postSpec = given()
             .baseUri(baseURI)
+            .basePath(postPath)
             .header("Content-Type", "application/json")
             .header("Accept", "application/json");
 }

@@ -1,4 +1,4 @@
-package com.demo.RaghavTuturials.Tutorial_4;
+package com.demo.MyStudies.Tutorial_4;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -8,9 +8,10 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-import com.demo.RaghavTuturials.Hooks.Base;
+import com.demo.MyStudies.Hooks.Base;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestExamples extends Base {
 
@@ -37,7 +38,7 @@ public class TestExamples extends Base {
     }
 
     @Test
-    public void test_2_Post() {
+    public void test_2_Get() {
 
         String path = "/users?page=2";
 
@@ -49,11 +50,10 @@ public class TestExamples extends Base {
                     .get(path)
                 .then()
                     .statusCode(200)
-                    .body("data.id[2]", equalTo(9))
+                    .body("data[2].id", equalTo(9))
                     .body("data.id", hasItems(7, 8, 9, 10, 11, 12))
+                    .log().body()
                     .extract().response();
-
-        // createdAt Timestamp assertions has been covered in the test_3_CreatedAtInRange test
     }
 
     /*
