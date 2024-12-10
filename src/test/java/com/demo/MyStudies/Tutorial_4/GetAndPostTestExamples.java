@@ -18,7 +18,7 @@ import com.demo.MyStudies.Hooks.Base;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
-public class GetAndPostExamples extends Base {
+public class GetAndPostTestExamples extends Base {
 
     @Test
     @DisplayName("Get Test Case")
