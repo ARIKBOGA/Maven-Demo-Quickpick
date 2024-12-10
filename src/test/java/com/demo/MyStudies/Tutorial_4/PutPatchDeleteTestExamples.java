@@ -1,10 +1,11 @@
 package com.demo.MyStudies.Tutorial_4;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertTrue;
 
 import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import org.json.simple.JSONObject;
@@ -59,6 +60,13 @@ public class PutPatchDeleteTestExamples extends Base{
 
     }
 
+    /**
+     * This test case verifies that we can delete a user by sending a DELETE request.
+     * 
+     * The test case sends a DELETE request to the service with the id of the user
+     * to be deleted. It then checks if the response status code is 204 and if the
+     * response headers contain the Date header with the current date and time.
+     */
     @Test
     @DisplayName("Delete Test Case")
     public void test_3_Delete() {
@@ -68,8 +76,18 @@ public class PutPatchDeleteTestExamples extends Base{
             .baseUri(baseURI)
             .delete(deletePath)
         .then()
-            .statusCode(204)
-            .log().body()
+            .statusCode(204) // Assert that the status code is 204
+            .log().all() // Log the response
             .extract().response();
+
+        // Get the date from the response headers
+        String date = response.header("Date");
+
+        // Parse the date
+        DateTimeFormatter formatter = DateTimeFormatter.RFC_1123_DATE_TIME;
+        Instant deletedAt = Instant.from(formatter.parse(date));
+
+        // Assert that the deletedAt is within the last second
+        assertTrue(ChronoUnit.SECONDS.between(deletedAt, Instant.now()) < 1);
     }
 }
