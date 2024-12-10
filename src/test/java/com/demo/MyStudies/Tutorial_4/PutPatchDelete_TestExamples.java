@@ -8,12 +8,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import org.json.simple.JSONObject;
-import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import com.demo.MyStudies.Hooks.Base;
 
-public class PutPatchDeleteTestExamples extends Base{
+public class PutPatchDelete_TestExamples extends Base{
     
     @Test
     @DisplayName("Put Test Case")
