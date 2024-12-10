@@ -1,7 +1,6 @@
 package com.demo.MyStudies.Tutorial_4;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertTrue;
 
 import java.time.Instant;
