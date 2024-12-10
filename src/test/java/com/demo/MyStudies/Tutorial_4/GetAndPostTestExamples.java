@@ -60,7 +60,7 @@ public class GetAndPostTestExamples extends Base {
             .body(jsonObject.toJSONString())
             .spec(postSpec)
         .when()
-            .post(postPath)
+            .post()
         .then()
             .statusCode(201)
             .body("id", is(notNullValue()))

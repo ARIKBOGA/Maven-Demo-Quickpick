@@ -28,11 +28,20 @@ public class Base {
     protected static final String baseURI = "https://reqres.in/api";
     protected static final String getPath = "/users?page=2";
     protected static final String postPath = "/users";
+    protected static final String putPath = "/users/2";
+    protected static final String patchPath = "/users/2";
+    protected static final String deletePath = "/users/2";
     protected static Response response;
 
     protected RequestSpecification postSpec = given()
             .baseUri(baseURI)
             .basePath(postPath)
+            .header("Content-Type", "application/json")
+            .header("Accept", "application/json");
+
+    protected RequestSpecification putSpec = given()
+            .baseUri(baseURI)
+            .basePath(putPath)
             .header("Content-Type", "application/json")
             .header("Accept", "application/json");
 }
