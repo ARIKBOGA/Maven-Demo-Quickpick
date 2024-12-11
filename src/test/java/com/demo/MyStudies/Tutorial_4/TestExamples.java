@@ -1,17 +1,13 @@
 package com.demo.MyStudies.Tutorial_4;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
-import java.io.File;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import com.demo.MyStudies.Hooks.Base;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class TestExamples extends Base {
 

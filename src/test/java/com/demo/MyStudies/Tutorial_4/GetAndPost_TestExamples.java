@@ -20,6 +20,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class GetAndPost_TestExamples extends Base {
 
+    @SuppressWarnings("unused")
     @Test
     @DisplayName("Get Test Case")
     public void test_1_Get() {

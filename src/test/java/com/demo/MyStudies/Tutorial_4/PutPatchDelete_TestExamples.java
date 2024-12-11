@@ -15,6 +15,7 @@ import com.demo.MyStudies.Hooks.Base;
 
 public class PutPatchDelete_TestExamples extends Base{
     
+    @SuppressWarnings("unchecked")
     @Test
     @DisplayName("Put Test Case")
     public void test_1_Put() {
@@ -39,6 +40,7 @@ public class PutPatchDelete_TestExamples extends Base{
     }
 
 
+    @SuppressWarnings("unchecked")
     @Test
     @DisplayName("Patch Test Case")
     public void test_2_Patch() {

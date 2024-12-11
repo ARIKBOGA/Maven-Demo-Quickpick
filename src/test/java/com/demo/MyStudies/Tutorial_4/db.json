@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Burak",
+      "lastName": "Arıkboğa",
+      "subjectId": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Albert",
+      "lastName": "Einstein",
+      "subjectId": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Mustafa Kemal",
+      "lastName": "Atatürk",
+      "subjectId": 3
+    },
+    {
+      "id": 4,
+      "firstName": "II. Mehmet",
+      "lastName": "Fatih Sultan",
+      "subjectId": 3
+    },
+    {
+      "id": 5,
+      "firstName": "John",
+      "lastName": "Doe",
+      "subjectId": 1
+    },
+    {
+      "id": 6,
+      "firstName": "Oktay",
+      "lastName": "Sinanoğlu",
+      "subjectId": 2
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "IT"
+    },
+    {
+      "id": 2,
+      "name": "Science"
+    },
+    {
+      "id": 3,
+      "name": "Politic"
+    }
+  ]
+}
