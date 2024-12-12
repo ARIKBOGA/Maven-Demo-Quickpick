@@ -19,7 +19,7 @@ public class SchemaValidationTest {
             .get("/api/users?page=2")
         .then()
             .statusCode(200)
-            .assertThat().body(matchesJsonSchemaInClasspath("reqresGetUsersSchema.json"));
+            .assertThat().body(matchesJsonSchemaInClasspath("JsonFiles/reqresGetUsersSchema.json"));
 
     }
 }

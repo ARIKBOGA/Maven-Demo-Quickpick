@@ -2,6 +2,7 @@ package com.demo.MyStudies.Tutorial_4;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +22,7 @@ public class SOAP_API_XML_Test {
     static{
         try{
 
-            File file = new File("src/test/resouces/XML_Files/Calculator_ADD.xml");
+            File file = new File("src/test/resources/XML_Files/CalculatorADD.xml");
             fis = new FileInputStream(file);
             postBody = IOUtils.toString(fis,"UTF-8");
     
@@ -43,6 +44,7 @@ public class SOAP_API_XML_Test {
             .post("/calculator.asmx")
         .then()
             .statusCode(200)
+            .body("//*:AddResult.text()", equalTo("8"))
             .log().all();
 
     }

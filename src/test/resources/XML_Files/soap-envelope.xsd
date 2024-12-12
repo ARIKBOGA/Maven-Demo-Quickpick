@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+           targetNamespace="http://schemas.xmlsoap.org/soap/envelope/"
+           elementFormDefault="qualified">
+
+    <xs:element name="Envelope">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" minOccurs="0" />
+                <xs:element name="Body">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:any namespace="##any" processContents="lax" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
